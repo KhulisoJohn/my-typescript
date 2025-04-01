@@ -9,11 +9,11 @@ This repository contains my journey and the projects I’ve completed as part of
 The Tecbride Foundation Cohort covers a range of topics designed to equip participants with practical skills in software engineering. Below are some of the key areas covered:
 
 ### Modules:
-1. **HTML/CSS**: Fundamentals of web development and styling.
-2. **JavaScript**: Core programming concepts, problem-solving, and DOM manipulation.
+1. **HTML/CSS&Javascript**: Fundamentals of web development.
+2. **Advanced JavaScript**: Core programming concepts, problem-solving, and DOM manipulation.
 3. **React**: Building dynamic user interfaces using React.js.
 4. **Version Control**: Git and GitHub for collaboration and version management.
-5. **Backend Development**: Introduction to Node.js and server-side programming.
+5. **Backend Development**: Introduction to C# and server-side programming.
 6. **Databases**: Basics of relational and non-relational databases, querying, and data modeling.
 7. **APIs**: Creating and consuming RESTful APIs.
 8. **Deployment**: Deploying applications using services like Heroku, Netlify, and AWS.
