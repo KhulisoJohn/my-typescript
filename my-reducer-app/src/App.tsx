@@ -1,9 +1,11 @@
 import { useReducer } from "react";
 import CartReducer from "./Components/CartReducer"; 
 import "./App.css";
+import useLocalStorage from "./Hooks/useLocalStorage";
 
 function App() {
   const [state, dispatch] = useReducer(CartReducer, { items: [], total: 0 });
+  const[countStorage, setCountStorage] = useLocalStorage("counter","khulyso");
 
   return (
     <div>
