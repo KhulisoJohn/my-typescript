@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useReducer } from "react";
+import CartReducer from "./Components/CartReducer"; 
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [state, dispatch] = useReducer(CartReducer, { items: [], total: 0 });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h2>Total: ${state.total}</h2>
+      {state.items.map((item) => (
+        <div key={item.id}>
+          {item.name} - ${item.price}
+          <button onClick={() => dispatch({ type: "REMOVE_ITEM", id: item.id })}>
+            Remove
+          </button>
+        </div>
+      ))}
+      <button
+        onClick={() =>
+          dispatch({
+            type: "ADD_ITEM",
+            item: { id: "1", name: "Phone", price: 200 },
+          })
+        }
+      >
+        Add phone
+      </button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: "ADD_ITEM",
+            item: { id: "2", name: "laptop", price: 2000 },
+          })
+        }
+      >
+        Add laptop
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
